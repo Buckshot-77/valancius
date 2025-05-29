@@ -1,0 +1,21 @@
+services:
+  postgres:
+    container_name: valancius-db
+    image: postgres:alpine
+    ports:
+      - 5432:5432
+    env_file: ".env"
+    volumes:
+      - ./data/pg:/data/postgres
+    
+
+  backend:
+    build:
+      context: "."
+      dockerfile: Dockerfile
+
+    env_file:
+      - ".env"
+      - ".test.env"
+    
+    restart: "unless-stopped"
