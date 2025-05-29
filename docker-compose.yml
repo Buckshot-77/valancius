@@ -16,6 +16,6 @@ services:
 
     env_file:
       - ".env"
-      - ".test.env"
+      - ".env.test"
     
     restart: "unless-stopped"
