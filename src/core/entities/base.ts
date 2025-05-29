@@ -39,6 +39,12 @@ export abstract class BaseEntity<CustomProps> {
     return this._baseProps.updatedAt
   }
 
+  get props(): CustomProps & BaseEntityProps {
+    const combinedProps = { ...this._baseProps, ...this._customProps }
+
+    return combinedProps
+  }
+
   touch() {
     this._baseProps.updatedAt = new Date()
   }
