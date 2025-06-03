@@ -7,7 +7,7 @@ export const factory = (): Config => {
     env: process.env.NODE_ENV,
     port: process.env.APPLICATION_PORT,
     database: {
-      name: process.env.POSTGRES_NAME,
+      name: process.env.POSTGRES_DB,
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       host: process.env.POSTGRES_HOST,
