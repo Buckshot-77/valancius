@@ -31,15 +31,15 @@ export class CPF {
 
   // Static utility methods
 
-  private static clean(cpf: string): string {
+  static clean(cpf: string): string {
     return cpf.replace(/\D/g, '')
   }
 
-  private static isValidFormat(cpf: string): boolean {
+  static isValidFormat(cpf: string): boolean {
     return /^\d{11}$/.test(cpf)
   }
 
-  private static isValidCPF(cpf: string): boolean {
+  static isValidCPF(cpf: string): boolean {
     // Reject known invalid CPFs
     if (/^(\d)\1+$/.test(cpf)) return false
 
